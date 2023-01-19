@@ -1,12 +1,8 @@
-import NASA_API_KEY from "./API.js"
-
-const url = NASA_API_KEY;
 const btn = document.getElementById('btn-new');
-
 btn.addEventListener('click', async (e) =>{
     e.preventDefault();
     try {
-        const r = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${url}&count=1&hd=true`);
+        const r = await fetch(`https://api.nasa.gov/planetary/apod?api_key=eVGZYY1PJ0pPIvcEKIBkoXNBwKMRQxJ0263g5azj&count=1&hd=true`);
         const jsonBody = await r.json();
         
         if(r.status === 200){
@@ -29,3 +25,4 @@ function showResults(obj) {
     document.querySelector('.gl-img').setAttribute('src',`${obj.url}`);
     document.querySelector('.gl-img').setAttribute('srcset',`${obj.hdurl}`)
 };
+
